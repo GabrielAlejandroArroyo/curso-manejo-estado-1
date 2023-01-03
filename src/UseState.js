@@ -45,9 +45,13 @@ function UseState({ name }) {
 
             <p>Por favor, escribe el codigo de seguridad para comprobar </p>
 
-            {(error && !loading) && (
+            {(error) && (
                 <p>Error: El codigo es incorrecto</p>
             )}
+
+            {/* {(error && !loading) && (
+                <p>Error: El codigo es incorrecto</p>
+            )} */}
 
             {loading && (
                 <p>Cargando ...</p>
@@ -57,7 +61,7 @@ function UseState({ name }) {
                 placeholder='Codigo de seguridad'
                 value={value}
                 onChange={(event) => {
-                    //setError(false); // Hace desaparacer el error ni bien se cambia el input desventajas, se ejecuta cada vez que camia el input
+                    setError(false); // Hace desaparacer el error ni bien se cambia el input desventajas, se ejecuta cada vez que camia el input
                     setValue(event.target.value);
                 }}
             />
